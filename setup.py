@@ -14,6 +14,7 @@ try:
     import pypandoc
     long_description = pypandoc.convert_file('README.md', 'rst')
 except ImportError:
+    raise
     long_description = open('README.md').read()
 
 # configure requirements
@@ -57,11 +58,11 @@ setup(
     description='Neural Network Toolbox on TensorFlow',
     long_description=long_description,
     install_requires=req,
-    tests_require=['flake8'],
+    #tests_require=['flake8'],
     extras_require={
         'all': extra_req
     },
     scripts=scripts_to_install,
-    setup_requires=['pbr>=1.9'],
-    pbr=True
+    #setup_requires=['pbr>=1.9'],
+    #pbr=True
 )
