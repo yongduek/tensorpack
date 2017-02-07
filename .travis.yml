@@ -6,6 +6,11 @@ cache:
   pip: true
   apt: true
 
+addons:
+  apt:
+    packages:
+    - pandoc
+
 matrix:
   fast_finish: true
   include:
