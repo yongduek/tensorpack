@@ -12,7 +12,7 @@ __version__ = libinfo['__version__']
 # produce rst readme for pypi
 try:
     import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
+    long_description = pypandoc.convert_file('README.md', 'rst')
 except ImportError:
     long_description = open('README.md').read()
 
@@ -54,6 +54,7 @@ for s in scripts:
 
 setup(
     version=__version__,
+    description='Neural Network Toolbox on TensorFlow',
     long_description=long_description,
     install_requires=req,
     tests_require=['flake8'],
