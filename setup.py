@@ -63,6 +63,4 @@ setup(
         'all': extra_req
     },
     scripts=scripts_to_install,
-    #setup_requires=['pbr>=1.9'],
-    #pbr=True
 )
