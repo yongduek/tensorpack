@@ -9,6 +9,13 @@ libinfo = {'__file__': libinfo_py}
 exec(compile(open(libinfo_py, "rb").read(), libinfo_py, 'exec'), libinfo, libinfo)
 __version__ = libinfo['__version__']
 
+# produce rst readme for pypi
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except ImportError:
+    long_description = open('README.md').read()
+
 # configure requirements
 req = [
     'numpy',
@@ -47,6 +54,7 @@ for s in scripts:
 
 setup(
     version=__version__,
+    long_description=long_description,
     install_requires=req,
     tests_require=['flake8'],
     extras_require={

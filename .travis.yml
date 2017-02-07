@@ -26,7 +26,7 @@ matrix:
 
 install:
 - pip install -U pip
-- pip install flake8 opencv-python
+- pip install flake8 opencv-python pypandoc
 - "./tests/install-tensorflow.sh"
 - pip install .
 
